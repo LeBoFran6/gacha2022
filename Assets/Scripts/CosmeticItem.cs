@@ -32,7 +32,6 @@ public class CosmeticItem : ScriptableObject
     {
         equiped = (SaveName == e);
         unlocked = PlayerPrefs.GetInt("Unlocked_" + SaveName, 0) == 1;
-        Debug.LogError(SaveName + "    " + e + "   " + equiped);
     }
 
 

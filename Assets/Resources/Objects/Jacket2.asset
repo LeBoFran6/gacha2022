@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: 2
   description: WOWOWOWOW REALLY COOL
   icon: {fileID: 21300000, guid: 7fd3cda14282bb7429b8eeb6c121e5bb, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 7787205887658544630, guid: fc8ee2b0fee1201419564849587cb4d6, type: 3}
   price: 10
   unlocked: 1
   equiped: 1

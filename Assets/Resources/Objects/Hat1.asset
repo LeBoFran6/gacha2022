@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Item12
   description: WOWOWOWOW WOW
   icon: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 3599322519025823509, guid: 316ce87f4c822ca41a1719457beeee67, type: 3}
   price: 10
   unlocked: 0
   equiped: 1

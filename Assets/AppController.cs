@@ -21,6 +21,7 @@ public class AppController : MonoBehaviour
 
     private void Awake()
     {
+        PlayerPrefs.DeleteAll();
         DontDestroyOnLoad(gameObject);
         CosmeticHolder.Instance.LoadGame();
         Money = 100;

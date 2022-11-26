@@ -39,7 +39,6 @@ public class CosmeticHolder : MonoBehaviour
 
         for (CosmeticItem.Type i = 0; i < CosmeticItem.Type.Count; i++)
         {
-            Debug.Log("Equiped_" + i.ToString());
             string equipedItem = PlayerPrefs.GetString("Equiped_" + i.ToString(), "");
             for (int x = 0; x < cosmeticItems.Length; x++)
             {
