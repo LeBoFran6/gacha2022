@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Runtime.ConstrainedExecution;
-
+using UnityEngine.Experimental.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     static GameManager _instance;
@@ -20,7 +20,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     public TMP_Text herbes;
     public TMP_Text score;
-
+    [SerializeField] private GameObject gameOverTextObject;
+    [SerializeField] private RenderObjects URPRenderObjects;
+    [SerializeField] private uint herbTreshold;
+    [SerializeField] private uint globalHerbs;
+    [SerializeField] private uint currentHerbs;
     public UI_GameOver gameoverScreen;
     public UI_PauseMenu pauseMenu;
     private bool isAlive;
@@ -64,7 +68,15 @@ public class GameManager : MonoBehaviour
     {
         if (!isAlive)
         {
-            player.SetActive(false);
+gameOverTextObject.SetActive(true);            
+player.SetActive(false);
+        }
+
+        if(currentHerbs == herbTreshold)
+        {
+            currentHerbs = 0;
+            URPRenderObjects.SetActive(true);
+            StartCoroutine(PsychoMode());
         }
     }
 
@@ -78,5 +90,18 @@ public class GameManager : MonoBehaviour
     {
         isAlive = false;
         gameoverScreen.ShowLoseScreen();
+    }
+
+    public void collectHerb()
+    {
+        globalHerbs++;
+        currentHerbs++;
+    }
+
+    IEnumerator PsychoMode()
+    {
+        yield return new WaitForSeconds(3f);
+
+        URPRenderObjects.SetActive(false);
     }
 }
