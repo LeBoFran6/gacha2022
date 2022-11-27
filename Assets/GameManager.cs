@@ -71,7 +71,6 @@ public class GameManager : MonoBehaviour
     public void WinEvent()
     {
         LevelData data = AppController.Instance.currentLevel;
-
         gameoverScreen.ShowWinScreen(0, 0, 0);
     }
 
