@@ -19,6 +19,10 @@ public class Deplacements : MonoBehaviour
     private float dir = 1;
 
     private bool isJumping = false;
+    private bool isSliding = false;
+
+    private float currentPitch = 0;
+    private float startPitch = 0;
 
     public void Gauche()
     {
@@ -29,7 +33,6 @@ public class Deplacements : MonoBehaviour
         D = true;
     }
 
-    // Update is called once per frame
     void Update()
     { 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -44,7 +47,8 @@ public class Deplacements : MonoBehaviour
             // Swipe vers le bas
             if (endTouchPosition.y < startTouchPosition.y)
             {
-                
+                isSliding = true;
+                currentPitch = transform.localRotation.x;
             }
 
             // Swipe vers le haut
@@ -55,6 +59,11 @@ public class Deplacements : MonoBehaviour
                 startpos = transform.position;
                 endpos = transform.position + new Vector3(0, 3, 0);
             }
+        }
+
+        if (isSliding)
+        {
+            transform.localRotation = Quaternion.identity;
         }
 
         if (isJumping)

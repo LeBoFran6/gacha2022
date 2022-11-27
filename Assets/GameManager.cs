@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject gameOverTextObject;
 
+    public UI_GameOver gameoverScreen;
     private bool isAlive;
 
     // Start is called before the first frame update
@@ -26,8 +27,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void WinEvent()
+    {
+        gameoverScreen.ShowWinScreen(0, 0, 0);
+    }
+
     public void deathEvent()
     {
         isAlive = false;
+        gameoverScreen.ShowLoseScreen();
     }
 }

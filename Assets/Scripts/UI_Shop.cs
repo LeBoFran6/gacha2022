@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI_Shop : MonoBehaviour
 {
     public TMPro.TMP_Text money;
     public UI_ShopItem[] shopItems;
+
+    public void QuitMenu()
+    {
+        SceneManager.UnloadSceneAsync("Shop");
+    }
 
     private void OnEnable()
     {
