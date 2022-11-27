@@ -26,6 +26,11 @@ public class AppController : MonoBehaviour
     private LevelData[] levels;
     public LevelData currentLevel;
 
+    public LevelData FindLevelByIndex(int i)
+    {
+        return levels[i];
+    }
+
     public LevelData FindLevelByName(string name)
     {
         for (int i = 0; i < levels.Length; i++)
@@ -87,7 +92,7 @@ public class AppController : MonoBehaviour
     }
 }
 
-
+[System.Serializable]
 public class LevelData 
 {
     public string levelName;

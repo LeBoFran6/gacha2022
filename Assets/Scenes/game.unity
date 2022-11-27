@@ -808,7 +808,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 104
   m_CollisionDetection: 0
 --- !u!114 &666836059
 MonoBehaviour:
@@ -861,7 +861,60 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  curveSlide:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4
+      outSlope: 4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: 0.22738267
+      outSlope: 0.22738267
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.16595745
+    - serializedVersion: 3
+      time: 0.75
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 4
+      outSlope: 4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   percentage: 0
+  gyroScript: {fileID: 666836060}
+  targetPitch: 5
 --- !u!114 &666836060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,6 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _UIManager: {fileID: 1962671381}
+  pitch: 0
 --- !u!65 &666836061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -966,8 +1020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2154888a9fce342bc24f145bc3d337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plante: {fileID: 0}
-  obst: {fileID: 0}
 --- !u!114 &666836066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,9 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ec0efb4cdbd943b5991c5941eb5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  gameOver: {fileID: 0}
-  script: {fileID: 0}
+  gameManager: {fileID: 1346079759}
 --- !u!1 &713608064
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,6 +2383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 583531801}
   gameOverTextObject: {fileID: 713608064}
+  gameoverScreen: {fileID: 7863227694264782128}
 --- !u!4 &1346079760
 Transform:
   m_ObjectHideFlags: 0
@@ -3368,3 +3419,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 525ce5473f2d16b48a09e4d90db038e5, type: 3}
+--- !u!114 &7863227694264782128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7863227693609630250, guid: 525ce5473f2d16b48a09e4d90db038e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7863227694264782127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1c00a71a6f862469ef83abe4f2ecf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,15 +6,14 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
 
-    public GameManager script;
+    public GameManager gameManager;
 
     private void OnTriggerEnter(Collider other)
     {
         compte_herbe addPlante = other.GetComponent<compte_herbe>();
         if (addPlante == null)
         {
-            script.deathEvent();
+            gameManager.deathEvent();
         }
-
     }
 }

@@ -6,7 +6,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject gameOverTextObject;
 
     public UI_GameOver gameoverScreen;
     private bool isAlive;
@@ -22,7 +21,6 @@ public class GameManager : MonoBehaviour
     {
         if (!isAlive)
         {
-            gameOverTextObject.SetActive(true);
             player.SetActive(false);
         }
     }

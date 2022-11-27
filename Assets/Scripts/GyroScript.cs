@@ -12,6 +12,7 @@ public class GyroScript : MonoBehaviour
 	[SerializeField] private UIManager _UIManager;
 	private float xAcc;
 	private float zRotAngle;
+	public float pitch;
 
 	// Use this for initialization
 	void Start()
@@ -27,7 +28,7 @@ public class GyroScript : MonoBehaviour
 
 		xAcc = Input.acceleration.x;
 		zRotAngle = xAcc * -90; // From [-1,1] phone acceleration to [90,-90] angle
-		Quaternion rotation = Quaternion.Euler(0,0,zRotAngle); 
+		Quaternion rotation = Quaternion.Euler(pitch, 0,zRotAngle); 
 		transform.rotation = rotation;
 
 		_UIManager.getGyroX(xAcc);
