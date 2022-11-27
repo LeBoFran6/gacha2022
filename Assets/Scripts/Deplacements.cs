@@ -28,6 +28,8 @@ public class Deplacements : MonoBehaviour
     private float currentPitch = 0;
     public float targetPitch = 0;
 
+    public Balance balance;
+
     public void Gauche()
     {
         G = true;
@@ -64,6 +66,8 @@ public class Deplacements : MonoBehaviour
 
                 startpos = transform.position;
                 endpos = transform.position + new Vector3(0, -0.5f, 0);
+
+                balance.AddTrouble();
             }
 
             // Swipe vers le haut
@@ -73,6 +77,8 @@ public class Deplacements : MonoBehaviour
 
                 startpos = transform.position;
                 endpos = transform.position + new Vector3(0, 3, 0);
+
+                balance.AddTrouble();
             }
         }
 

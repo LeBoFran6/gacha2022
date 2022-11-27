@@ -17,7 +17,6 @@ public class UI_MainMenu : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Shop", UnityEngine.SceneManagement.LoadSceneMode.Additive);
     }
 
-
     public void LoadScene(string s)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(s);

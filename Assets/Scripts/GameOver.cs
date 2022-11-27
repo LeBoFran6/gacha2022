@@ -10,8 +10,9 @@ public class GameOver : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Ending ending = other.GetComponent<Ending>();
         compte_herbe addPlante = other.GetComponent<compte_herbe>();
-        if (addPlante == null)
+        if (addPlante == null && ending == null)
         {
             gameManager.deathEvent();
         }
