@@ -2949,6 +2949,11 @@ MonoBehaviour:
   player: {fileID: 583531801}
   herbes: {fileID: 5495728628498169142}
   score: {fileID: 5495728627158269202}
+  URPRenderObjects: {fileID: -215064790276275849, guid: c40be3174f62c4acf8c1216858c64956,
+    type: 2}
+  herbTreshold: 8
+  globalHerbs: 0
+  currentHerbs: 0
   gameoverScreen: {fileID: 5495728627762057673}
   pauseMenu: {fileID: 5495728627171350930}
   herbe: 0

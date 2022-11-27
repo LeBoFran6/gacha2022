@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player;
     public TMP_Text herbes;
     public TMP_Text score;
-    [SerializeField] private GameObject gameOverTextObject;
     [SerializeField] private RenderObjects URPRenderObjects;
     [SerializeField] private uint herbTreshold;
     [SerializeField] private uint globalHerbs;
@@ -34,6 +33,8 @@ public class GameManager : MonoBehaviour
     public void AddHerbe()
     {
         herbe++;
+        globalHerbs++;
+        currentHerbs++;
         UpdateHerbe(herbe);
     }
 
@@ -68,8 +69,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isAlive)
         {
-gameOverTextObject.SetActive(true);            
-player.SetActive(false);
+            player.SetActive(false);
         }
 
         if(currentHerbs == herbTreshold)
@@ -90,12 +90,6 @@ player.SetActive(false);
     {
         isAlive = false;
         gameoverScreen.ShowLoseScreen();
-    }
-
-    public void collectHerb()
-    {
-        globalHerbs++;
-        currentHerbs++;
     }
 
     IEnumerator PsychoMode()
