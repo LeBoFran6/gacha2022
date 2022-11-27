@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1018,8 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ec0efb4cdbd943b5991c5941eb5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1936194873}
-  gameOver: {fileID: 1170631219}
+  script: {fileID: 0}
 --- !u!65 &918424359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1214,8 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ec0efb4cdbd943b5991c5941eb5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1936194873}
-  gameOver: {fileID: 1170631219}
+  script: {fileID: 0}
 --- !u!65 &1055187546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1627,8 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ec0efb4cdbd943b5991c5941eb5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1936194873}
-  gameOver: {fileID: 1170631219}
+  script: {fileID: 0}
 --- !u!65 &1301942189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1802,8 +1799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ec0efb4cdbd943b5991c5941eb5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1936194873}
-  gameOver: {fileID: 1170631219}
+  script: {fileID: 0}
 --- !u!1 &1773398103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,6 +1884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dbe59f117439a4e9bdfedf97e204a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UIManager: {fileID: 0}
 --- !u!114 &1936194875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,6 +1898,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1936194880}
+  G: 0
+  D: 0
+  positionPlayer: 1
+  startpos: {x: 0, y: 0, z: 0}
+  endpos: {x: 0, y: 0, z: 0}
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  percentage: 0
 --- !u!23 &1936194876
 MeshRenderer:
   m_ObjectHideFlags: 0
