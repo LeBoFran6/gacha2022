@@ -8,6 +8,7 @@ public class Balance : MonoBehaviour
     [SerializeField] private float zRot;
     [SerializeField] private GameManager _GameManager;
     [SerializeField] private UIManager _UIManager;
+    public GameObject JeanPoilIsFalling;
 
     void Update()
     {
@@ -17,16 +18,20 @@ public class Balance : MonoBehaviour
         {
             _UIManager.hideDangerRight();
             _UIManager.showDangerLeft();
+            JeanPoilIsFalling.SetActive(true);
+
         }
         else if(zRot > 180f && zRot < (360f - treshold / 2f))
         {
             _UIManager.hideDangerLeft();
             _UIManager.showDangerRight();
+            JeanPoilIsFalling.SetActive(true);
         }
         else
         {
             _UIManager.hideDangerRight();
             _UIManager.hideDangerLeft();
+            JeanPoilIsFalling.SetActive(false);
         }
 
         if (zRot < 180f && zRot > treshold)
