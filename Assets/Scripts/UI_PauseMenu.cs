@@ -8,6 +8,7 @@ public class UI_PauseMenu : MonoBehaviour
 
     public void Retry()
     {
+        Time.timeScale = 1;
         var s = SceneManager.GetActiveScene();
         SceneManager.LoadScene(s.name);
     }

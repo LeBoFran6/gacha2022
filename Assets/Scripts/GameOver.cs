@@ -6,7 +6,6 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
 
-    public GameManager gameManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +13,7 @@ public class GameOver : MonoBehaviour
         compte_herbe addPlante = other.GetComponent<compte_herbe>();
         if (addPlante == null && ending == null)
         {
-            gameManager.deathEvent();
+            GameManager.Instance.deathEvent();
         }
     }
 }

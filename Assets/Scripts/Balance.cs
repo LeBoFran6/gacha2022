@@ -6,7 +6,6 @@ public class Balance : MonoBehaviour
 {
     [SerializeField] private float treshold = 45f;  
     [SerializeField] private float zRot;
-    [SerializeField] private GameManager _GameManager;
     [SerializeField] private UI_GyroIndicator gyroIndicator;
 
     public Vector2 varianceRange = new Vector2(5, 10);
@@ -28,7 +27,6 @@ public class Balance : MonoBehaviour
     {
         turbulanceTarget += add;
     }
-
 
     void Update()
     {
@@ -57,12 +55,12 @@ public class Balance : MonoBehaviour
 
         if (zRot < 180f && zRot > treshold)
         {
-            _GameManager.deathEvent();
+            GameManager.Instance.deathEvent();
             //Debug.Log("Left Death");
         }
         else if (zRot > 180f && zRot < (360f - treshold))
         {
-            _GameManager.deathEvent();
+            GameManager.Instance.deathEvent();
             //Debug.Log("Right Death");
         }
     }
