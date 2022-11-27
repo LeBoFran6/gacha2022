@@ -41,7 +41,7 @@ public class Deplacements : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && isJumping == false)
         {
             isJumping = true;
 
@@ -71,7 +71,7 @@ public class Deplacements : MonoBehaviour
             }
 
             // Swipe vers le haut
-            if (endTouchPosition.y > startTouchPosition.y)
+            if (endTouchPosition.y > startTouchPosition.y && isJumping == false)
             {
                 isJumping = true;
 
