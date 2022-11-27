@@ -34,7 +34,15 @@ public class Deplacements : MonoBehaviour
     }
 
     void Update()
-    { 
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            isJumping = true;
+
+            startpos = transform.position;
+            endpos = transform.position + new Vector3(0, 3, 0);
+        }
+
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             startTouchPosition = Input.GetTouch(0).position;
