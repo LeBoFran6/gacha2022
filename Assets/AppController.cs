@@ -19,9 +19,13 @@ public class AppController : MonoBehaviour
     [SerializeField]
     private string sceneToLoad = "none";
 
+    [SerializeField]
+    private bool resetDB = false;
+
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        if(resetDB)
+            PlayerPrefs.DeleteAll();
         DontDestroyOnLoad(gameObject);
         CosmeticHolder.Instance.LoadGame();
         Money = 100;

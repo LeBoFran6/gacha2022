@@ -1,27 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
     public GameObject Player;
     public GameObject gameOver;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Collect script;
 
     private void OnTriggerEnter(Collider other)
     {
-        gameOver.SetActive(true);
-        Player.SetActive(false);
+        compte_herbe addPlante = other.GetComponent<compte_herbe>();
+        if (addPlante == null)
+        {
+            gameOver.SetActive(true);
+            Player.SetActive(false);
+        }
+
     }
 }
