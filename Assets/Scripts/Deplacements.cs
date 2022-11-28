@@ -41,6 +41,15 @@ public class Deplacements : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftControl) && isSliding == false)
+        {
+            isSliding = true;
+            currentPitch = 0;
+
+            startpos = transform.position;
+            endpos = transform.position + new Vector3(0, -0.5f, 0);
+        }
+
         if (Input.GetKeyDown("space") && isJumping == false)
         {
             isJumping = true;
@@ -66,8 +75,7 @@ public class Deplacements : MonoBehaviour
 
                 startpos = transform.position;
                 endpos = transform.position + new Vector3(0, -0.5f, 0);
-
-                balance.AddTrouble();
+                
             }
 
             // Swipe vers le haut
@@ -78,7 +86,6 @@ public class Deplacements : MonoBehaviour
                 startpos = transform.position;
                 endpos = transform.position + new Vector3(0, 3, 0);
 
-                balance.AddTrouble();
             }
         }
 
