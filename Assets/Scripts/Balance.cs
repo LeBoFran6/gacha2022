@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Balance : MonoBehaviour
 {
+    //animations
+    public GameObject JeanPoilIsFalling;
+
+
     [SerializeField] private float treshold = 45f;  
     [SerializeField] private float currentTreshold = 45f;
     [SerializeField] private float zRot;
@@ -42,16 +46,19 @@ public class Balance : MonoBehaviour
         {
             gyroIndicator.ShowDangerRight(false);
             gyroIndicator.ShowDangerLeft(true);
+            JeanPoilIsFalling.SetActive(true);
         }
         else if(zRot > 180f && zRot < (360f - treshold / 2f))
         {
             gyroIndicator.ShowDangerLeft(false);
             gyroIndicator.ShowDangerRight(true);
+            JeanPoilIsFalling.SetActive(true);
         }
         else
         {
             gyroIndicator.ShowDangerRight(false);
             gyroIndicator.ShowDangerLeft(false);
+            JeanPoilIsFalling.SetActive(false);
         }
 
         if (zRot < 180f && zRot > treshold)
