@@ -10,7 +10,7 @@ public class Collect : MonoBehaviour
         compte_herbe addPlante = plante.GetComponent<compte_herbe>();
         if(addPlante != null)
         {
-            GameController.Instance.AddHerbe();
+            GameManager.Instance.AddHerbe();
             addPlante.OnPlayerTriggerEnter(gameObject);
         }
     }

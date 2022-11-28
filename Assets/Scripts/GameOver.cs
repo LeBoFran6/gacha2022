@@ -6,15 +6,15 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
 
-    public GameManager script;
 
     private void OnTriggerEnter(Collider other)
     {
+        Wave w = other.transform.GetComponent<Wave>();
+        Ending ending = other.GetComponent<Ending>();
         compte_herbe addPlante = other.GetComponent<compte_herbe>();
-        if (addPlante == null)
+        if (addPlante == null && ending == null && w == null)
         {
-            script.deathEvent();
+            GameManager.Instance.deathEvent();
         }
-
     }
 }

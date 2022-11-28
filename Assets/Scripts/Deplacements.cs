@@ -15,10 +15,20 @@ public class Deplacements : MonoBehaviour
     [SerializeField] private Vector3 startpos;
     [SerializeField] private Vector3 endpos;
     [SerializeField] private AnimationCurve curve;
+    [SerializeField] private AnimationCurve curveSlide;
     [SerializeField] private float percentage;
     private float dir = 1;
 
     private bool isJumping = false;
+    private bool isSliding = false;
+
+    [SerializeField]
+    private GyroScript gyroScript;
+
+    private float currentPitch = 0;
+    public float targetPitch = 0;
+
+    public Balance balance;
 
     public void Gauche()
     {
@@ -29,10 +39,9 @@ public class Deplacements : MonoBehaviour
         D = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && isJumping == false)
         {
             isJumping = true;
 
@@ -52,16 +61,38 @@ public class Deplacements : MonoBehaviour
             // Swipe vers le bas
             if (endTouchPosition.y < startTouchPosition.y)
             {
-                
+                isSliding = true;
+                currentPitch = 0;
+
+                startpos = transform.position;
+                endpos = transform.position + new Vector3(0, -0.5f, 0);
+
+                balance.AddTrouble();
             }
 
             // Swipe vers le haut
-            if (endTouchPosition.y > startTouchPosition.y)
+            if (endTouchPosition.y > startTouchPosition.y && isJumping == false)
             {
                 isJumping = true;
 
                 startpos = transform.position;
                 endpos = transform.position + new Vector3(0, 3, 0);
+
+                balance.AddTrouble();
+            }
+        }
+
+        if (isSliding)
+        {
+            currentPitch = Mathf.LerpUnclamped(0, targetPitch, curveSlide.Evaluate(percentage));
+            gyroScript.pitch = currentPitch;
+            transform.position = Vector3.LerpUnclamped(startpos, endpos, curve.Evaluate(percentage));
+            percentage += Time.deltaTime;
+
+            if (percentage > 1)
+            {
+                isSliding = false;
+                percentage = 0;
             }
         }
 

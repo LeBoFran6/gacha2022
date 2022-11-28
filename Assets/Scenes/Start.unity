@@ -154,6 +154,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: MainMenu
+  resetDB: 0
+  levels:
+  - levelName: Game
+    nextLevel: Level2
+    diffiuclty: 0
+    unlocked: 0
+    success: 0
+    stars: 0
+    unlockedDefault: 1
+  - levelName: Level2
+    nextLevel: 
+    diffiuclty: 0
+    unlocked: 0
+    success: 0
+    stars: 0
+    unlockedDefault: 0
+  currentLevel:
+    levelName: 
+    nextLevel: 
+    diffiuclty: 0
+    unlocked: 0
+    success: 0
+    stars: 0
+    unlockedDefault: 0
 --- !u!4 &908609070
 Transform:
   m_ObjectHideFlags: 0
