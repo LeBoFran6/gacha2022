@@ -10,10 +10,12 @@ public class CosmeticItem : ScriptableObject
     [TextArea]
     public string description;
     public Sprite icon;
-    public GameObject prefab;
+    public Material prefab;
     public int price;
     public bool unlocked = false;
     public bool equiped = false;
+
+    public bool defaultUnlocked = false;
 
     public string SaveName
     {
@@ -38,8 +40,8 @@ public class CosmeticItem : ScriptableObject
     public enum Type
     {
         None,
-        Hat,
-        Jacket,
+        JeanPoil,
+        Shredinger,
         Count ///PLZ LAST
     }
 }

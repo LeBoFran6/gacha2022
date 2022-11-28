@@ -63,12 +63,12 @@ public class CosmeticHolder : MonoBehaviour
         {
             case CosmeticItem.Type.None:
                 break;
-            case CosmeticItem.Type.Hat:
+            case CosmeticItem.Type.JeanPoil:
                 if(hat)
                     hat.equiped = false;
                 hat = item;
                 break;
-            case CosmeticItem.Type.Jacket:
+            case CosmeticItem.Type.Shredinger:
                 if(jacket)
                     jacket.equiped = false;
                 jacket = item;

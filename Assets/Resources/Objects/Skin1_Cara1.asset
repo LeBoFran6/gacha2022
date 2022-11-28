@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb01590e8b2d7bd4b87cbffcfd88a453, type: 3}
-  m_Name: Hat2
+  m_Name: Skin1_Cara1
   m_EditorClassIdentifier: 
   type: 1
-  itemName: Item1
-  description: WOWOWOWOW WOW
-  icon: {fileID: 21300000, guid: fd098fb4cf57bad419701c802e442b7e, type: 3}
-  prefab: {fileID: 1456306339861109848, guid: 72915e3a644a31840acf3b1b2e7e35f3, type: 3}
-  price: 10
-  unlocked: 1
+  itemName: Jean Poil le beau
+  description: 
+  icon: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  prefab: {fileID: 3599322519025823509, guid: 316ce87f4c822ca41a1719457beeee67, type: 3}
+  price: 50
+  unlocked: 0
   equiped: 1
