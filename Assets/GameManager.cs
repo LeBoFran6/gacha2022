@@ -91,6 +91,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool finishedGame = false;
+
     public void WinEvent()
     {
         LevelData data = AppController.Instance.currentLevel;

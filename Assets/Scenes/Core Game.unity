@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7269,6 +7269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351527498}
   - component: {fileID: 351527499}
+  - component: {fileID: 351527500}
   m_Layer: 0
   m_Name: Ambiance
   m_TagString: Untagged
@@ -7387,6 +7388,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &351527500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351527497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b9c2748e8eb3846b31acb5900a8083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeFrameCount: 180
 --- !u!4 &352444105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 796d7f4463b62f64898b4a71471fd228,
@@ -28120,6 +28134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1336204396}
   - component: {fileID: 1336204397}
+  - component: {fileID: 1336204398}
   m_Layer: 0
   m_Name: Musique Phase 1
   m_TagString: Untagged
@@ -28238,6 +28253,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1336204398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336204395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b9c2748e8eb3846b31acb5900a8083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeFrameCount: 180
 --- !u!1001 &1336865561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30344,6 +30372,11 @@ PrefabInstance:
       propertyPath: rootCollectibles
       value: 
       objectReference: {fileID: 1109617451}
+    - target: {fileID: 5495728628386705707, guid: 2e547745ffe7d854c9f67d83a2d453a5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 646.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5495728628625466925, guid: 2e547745ffe7d854c9f67d83a2d453a5,
         type: 3}
       propertyPath: m_Name
