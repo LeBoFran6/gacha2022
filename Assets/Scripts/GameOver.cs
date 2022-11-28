@@ -10,7 +10,7 @@ public class GameOver : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        JPdeath.SetActive(true);
+        
 
         Wave w = other.transform.GetComponent<Wave>();
         Ending ending = other.GetComponent<Ending>();
@@ -18,6 +18,7 @@ public class GameOver : MonoBehaviour
         if (addPlante == null && ending == null && w == null)
         {
             GameManager.Instance.deathEvent();
+            JPdeath.SetActive(true);
         }
     }
 }
