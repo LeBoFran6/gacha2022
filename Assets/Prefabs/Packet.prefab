@@ -6726,7 +6726,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6dc5b3a68cf81f143a59f0fc4711e924,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.206
+      value: -0.515
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6dc5b3a68cf81f143a59f0fc4711e924,
         type: 3}
@@ -6807,6 +6807,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &728858479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148534472985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d51334a254a954d972b17b34844386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 666836056}
+  Pousse: {fileID: 919132148534472985}
 --- !u!1001 &1544843269
 PrefabInstance:
   m_ObjectHideFlags: 0
