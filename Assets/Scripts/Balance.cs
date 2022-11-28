@@ -4,28 +4,46 @@ using UnityEngine;
 
 public class Balance : MonoBehaviour
 {
-    //animations
+    public GameObject JeanPoilIdle;
     public GameObject JeanPoilIsFalling;
 
 
-    [SerializeField] private float treshold = 45f;  
+    [SerializeField] private float tresholdMin = 30f;  
+    [SerializeField] private float tresholdMax = 45f;
     [SerializeField] private float currentTreshold = 45f;
     [SerializeField] private float zRot;
     [SerializeField] private UI_GyroIndicator gyroIndicator;
 
-    public Vector2 varianceRange = new Vector2(5, 10);
+    public Vector2 varianceRange = new Vector2(10, 20);
 
     private float turbulance = 0;
     private float turbulanceTarget = 0;
+    public float maxTurbulance = 20;
+    [Range(0f, 1f)]
+    public float percentageWarning = .5f;
 
     public float turbulanceTargetLerpSpeed = 0.005f;
     public float turbulanceLerpSpeed = 0.1f;
+
+    bool gameStarting = true;
+
+    IEnumerator Start()
+    {
+        yield return new WaitForSeconds(GameManager.Instance.iframeBegining);
+        gameStarting = false;
+        while (true)
+        {
+            yield return new WaitForSeconds(GameManager.Instance.timeBetweenWaves);
+            AddTrouble();
+        }
+    }
 
     public void AddTrouble()
     {
         float add = Random.Range(varianceRange.x, varianceRange.y);
         add *= (Random.Range(0, 2) % 2 == 0) ? -1f : 1f;
         turbulanceTarget += add;
+        turbulanceTarget = Mathf.Clamp(turbulanceTarget, -maxTurbulance, maxTurbulance);
     }
 
     public void AddTrouble(int add)
@@ -42,34 +60,51 @@ public class Balance : MonoBehaviour
 
         zRot = transform.eulerAngles.z;
 
-        if(zRot < 180f && zRot > treshold / 2f)
-        {
-            gyroIndicator.ShowDangerRight(false);
-            gyroIndicator.ShowDangerLeft(true);
-            JeanPoilIsFalling.SetActive(true);
-        }
-        else if(zRot > 180f && zRot < (360f - treshold / 2f))
-        {
-            gyroIndicator.ShowDangerLeft(false);
-            gyroIndicator.ShowDangerRight(true);
-            JeanPoilIsFalling.SetActive(true);
-        }
-        else
-        {
-            gyroIndicator.ShowDangerRight(false);
-            gyroIndicator.ShowDangerLeft(false);
-            JeanPoilIsFalling.SetActive(false);
-        }
+        float v = zRot > 180 ? zRot - 360f : zRot;
 
-        if (zRot < 180f && zRot > treshold)
+        //Debug.LogError(turbulanceTarget);
+        //Debug.LogError(currentTreshold + turbulance - warrningTreshold);
+        //Debug.LogError(-currentTreshold + turbulance + warrningTreshold);
+
+        float warningThreshold = currentTreshold * percentageWarning;
+
+        if (!GameManager.Instance.finishedGame)
         {
-            GameManager.Instance.deathEvent();
-            //Debug.Log("Left Death");
-        }
-        else if (zRot > 180f && zRot < (360f - treshold))
-        {
-            GameManager.Instance.deathEvent();
-            //Debug.Log("Right Death");
+            if (v > 0 && v > currentTreshold + turbulance - warningThreshold)
+            {
+                gyroIndicator.ShowDangerRight(false);
+                gyroIndicator.ShowDangerLeft(true);
+                JeanPoilIsFalling.SetActive(true);
+                JeanPoilIdle.SetActive(false);
+            }
+            else if (v < 0 && v < -currentTreshold + turbulance + warningThreshold)
+            {
+                gyroIndicator.ShowDangerLeft(false);
+                gyroIndicator.ShowDangerRight(true);
+                JeanPoilIsFalling.SetActive(true);
+                JeanPoilIdle.SetActive(false);
+
+            }
+            else
+            {
+                gyroIndicator.ShowDangerLeft(false);
+                gyroIndicator.ShowDangerRight(false);
+                JeanPoilIsFalling.SetActive(false);
+                JeanPoilIdle.SetActive(true);
+            }
+
+            if (!gameStarting)
+            {
+                if (v > 0 && v > currentTreshold + turbulance)
+                {
+                    GameManager.Instance.deathEvent();
+                }
+
+                if (v < 0 && v < -currentTreshold + turbulance)
+                {
+                    GameManager.Instance.deathEvent();
+                }
+            }
         }
     }
 }

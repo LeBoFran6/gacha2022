@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private uint currentHerbs;
     public UI_GameOver gameoverScreen;
     public UI_PauseMenu pauseMenu;
+
+    public float iframeBegining = 3f;
+    public float timeBetweenWaves = 5f;
     private bool isAlive;
 
     public void OnDestroy()
@@ -87,6 +90,8 @@ public class GameManager : MonoBehaviour
             StartCoroutine(PsychoMode());
         }
     }
+
+    public bool finishedGame = false;
 
     public void WinEvent()
     {

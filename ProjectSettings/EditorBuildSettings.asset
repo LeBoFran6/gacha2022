@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/gameSpawn.unity
     guid: 1f05c5d49193b4c8fbf26314f9d7007b
+  - enabled: 1
+    path: Assets/Scenes/Tuto.unity
+    guid: b9363982629c31046bc5a8e775c6e25d
   m_configObjects: {}

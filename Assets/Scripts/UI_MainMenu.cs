@@ -8,8 +8,11 @@ public class UI_MainMenu : MonoBehaviour
     {
         LevelData levelData = AppController.Instance.FindLevelByIndex(i);
         AppController.Instance.currentLevel = levelData;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(levelData.levelName);
 
+        if(levelData.unlockedDefault)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Tuto");
+        else
+            UnityEngine.SceneManagement.SceneManager.LoadScene(levelData.levelName);
     }
 
     public void LoadShop()

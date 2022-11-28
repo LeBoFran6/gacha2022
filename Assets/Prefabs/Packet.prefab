@@ -289,12 +289,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3067046d27aa4894bda2e0562b6d113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JeanPoilIdle: {fileID: 919132148295841306}
   JeanPoilIsFalling: {fileID: 919132149496689054}
-  treshold: 20
-  currentTreshold: 45
+  tresholdMin: 20
+  tresholdMax: 35
+  currentTreshold: 35
   zRot: 0
   gyroIndicator: {fileID: 5495728628622823872}
-  varianceRange: {x: 10, y: 20}
+  varianceRange: {x: 5, y: 5}
+  maxTurbulance: 20
+  percentageWarning: 0.717
   turbulanceTargetLerpSpeed: 0.005
   turbulanceLerpSpeed: 0.1
 --- !u!114 &666836065
@@ -3393,6 +3397,8 @@ MonoBehaviour:
   currentHerbs: 0
   gameoverScreen: {fileID: 5495728627762057673}
   pauseMenu: {fileID: 5495728627171350930}
+  iframeBegining: 3
+  timeBetweenWaves: 2
   herbe: 0
 --- !u!114 &1049933299
 MonoBehaviour:

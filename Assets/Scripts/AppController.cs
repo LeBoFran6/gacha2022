@@ -21,6 +21,8 @@ public class AppController : MonoBehaviour
 
     [SerializeField]
     private bool resetDB = false;
+    [SerializeField]
+    private GameObject fadein;
 
     [SerializeField]
     private LevelData[] levels;
@@ -42,9 +44,13 @@ public class AppController : MonoBehaviour
         return null;
     }
 
-    private void Awake()
+    private IEnumerator Start()
     {
-        if(resetDB)
+        yield return new WaitForSeconds(5);
+        fadein.SetActive(true);
+        yield return new WaitForSeconds(1);
+
+        if (resetDB)
             PlayerPrefs.DeleteAll();
         DontDestroyOnLoad(gameObject);
         CosmeticHolder.Instance.LoadGame();
@@ -105,7 +111,7 @@ public class LevelData
     [SerializeField]
     private int stars;
     [SerializeField]
-    private bool unlockedDefault;
+    public bool unlockedDefault;
 
     public bool Success
     {
