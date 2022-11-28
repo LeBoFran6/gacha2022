@@ -118,26 +118,31 @@ public class Deplacements : MonoBehaviour
             }
         }
 
-        if (positionPlayer != 0)
+        if(isJumping == false)
         {
-            if (G)
-            {
-                rb.velocity = new Vector3(-35, 0, 0);
-                positionPlayer--;
-                G = false;
-            }
-        }
 
-        if (positionPlayer != 2)
-        {
-            if (D)
+            if (positionPlayer != 0)
             {
-                rb.velocity = new Vector3(35, 0, 0);
-                positionPlayer++;
-                D = false;
+                if (G)
+                {
+                    rb.velocity = new Vector3(-35, 0, 0);
+                    positionPlayer--;
+                    G = false;
+                }
             }
+
+            if (positionPlayer != 2)
+            {
+                if (D)
+                {
+                    rb.velocity = new Vector3(35, 0, 0);
+                    positionPlayer++;
+                    D = false;
+                }
+            }
+            D = false;
+            G = false;
+
         }
-        D = false;
-        G = false;
     }
 }
