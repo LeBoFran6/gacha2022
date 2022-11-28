@@ -14563,6 +14563,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 666836064, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
+      propertyPath: tresholdMax
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 666836064, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
+      propertyPath: tresholdMin
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 666836064, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
+      propertyPath: currentTreshold
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 666836064, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
+      propertyPath: varianceRange.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 666836064, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
+      propertyPath: varianceRange.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 666836064, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
+      propertyPath: warrningTreshold
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 666836064, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
+      propertyPath: percentageWarning
+      value: 0.717
+      objectReference: {fileID: 0}
     - target: {fileID: 1569197535, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14577,6 +14605,16 @@ PrefabInstance:
       propertyPath: psycho
       value: 
       objectReference: {fileID: 2100000, guid: ad02ea5daedd8ab4a99ed6703b49af28, type: 2}
+    - target: {fileID: 5495728627611822787, guid: 2e547745ffe7d854c9f67d83a2d453a5,
+        type: 3}
+      propertyPath: iframeBegining
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495728627611822787, guid: 2e547745ffe7d854c9f67d83a2d453a5,
+        type: 3}
+      propertyPath: timeBetweenWaves
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5495728627762057678, guid: 2e547745ffe7d854c9f67d83a2d453a5,
         type: 3}
       propertyPath: m_IsActive
