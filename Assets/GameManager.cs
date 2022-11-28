@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using System.Runtime.ConstrainedExecution;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Rendering.Universal;
+
 public class GameManager : MonoBehaviour
 {
     static GameManager _instance;
@@ -21,12 +23,18 @@ public class GameManager : MonoBehaviour
     public TMP_Text herbes;
     public TMP_Text score;
     [SerializeField] private RenderObjects URPRenderObjects;
+    [SerializeField] private Material psycho;
     [SerializeField] private uint herbTreshold;
     [SerializeField] private uint globalHerbs;
     [SerializeField] private uint currentHerbs;
     public UI_GameOver gameoverScreen;
     public UI_PauseMenu pauseMenu;
     private bool isAlive;
+
+    public void OnDestroy()
+    {
+        URPRenderObjects.SetActive(false);
+    }
 
     public int herbe = 0;
 
@@ -92,10 +100,65 @@ public class GameManager : MonoBehaviour
         gameoverScreen.ShowLoseScreen();
     }
 
+    IEnumerator QuickChromaEffect()
+    {
+            yield return null;
+        //      PostProcessVolume m_Volume;
+        //      Vignette m_Vignette
+        // void Start()
+        //      {
+        //          // Create an instance of a vignette
+        //          m_Vignette = ScriptableObject.CreateInstance<Vignette>();
+        //          m_Vignette.enabled.Override(true);
+        //          m_Vignette.intensity.Override(1f);
+        //          // Use the QuickVolume method to create a volume with a priority of 100, and assign the vignette to this volume
+        //          m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, m_Vignette);
+        //          void Update()
+        //          {
+        //              // Change vignette intensity using a sinus curve
+        //              m_Vignette.intensity.value = Mathf.Sin(Time.realtimeSinceStartup);
+        //          }
+        //          void OnDestroy()
+        //          {
+        //              RuntimeUtilities.DestroyVolume(m_Volume, true, true);
+        //          }
+    }
+
+    IEnumerator LerpPsychoIn()
+    {
+        float f = 0;
+        int i = 0;
+        while (i < 60)
+        {
+            psycho.SetFloat("_hallu", Mathf.Lerp(f, 1f, 0.05f));
+            i++;
+            yield return null;
+        }
+        psycho.SetFloat("_hallu", 1f);
+    }
+
+    IEnumerator LerpPsychoOut()
+    {
+
+        float f = 0;
+        int i = 0;
+        while (i < 60)
+        {
+            psycho.SetFloat("_hallu", Mathf.Lerp(f, 1f, 0.05f));
+            i++;
+            yield return null;
+        }
+        psycho.SetFloat("_hallu", 1f);
+    }
+
     IEnumerator PsychoMode()
     {
+        LerpPsychoIn();
+
         yield return new WaitForSeconds(3f);
 
         URPRenderObjects.SetActive(false);
+
+        LerpPsychoOut();
     }
 }

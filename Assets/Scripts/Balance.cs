@@ -5,6 +5,7 @@ using UnityEngine;
 public class Balance : MonoBehaviour
 {
     [SerializeField] private float treshold = 45f;  
+    [SerializeField] private float currentTreshold = 45f;
     [SerializeField] private float zRot;
     [SerializeField] private UI_GyroIndicator gyroIndicator;
 
