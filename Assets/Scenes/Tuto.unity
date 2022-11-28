@@ -769,9 +769,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " Votre objectif est de ramasser le plus d'herbe \xE0 chats pour votre
-    consommation mais aussi pour en revendre ! Plus vous consommez d'herbe \xE0 chats
-    , plus il sera dur de rester en \xE9quilibre"
+  m_text: Your goal is to collect as much catnip as you can for consumption but also
+    for resale!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 01efb0fd808ba86438ae61ec51290978, type: 2}
   m_sharedMaterial: {fileID: 4195976732622422233, guid: 01efb0fd808ba86438ae61ec51290978,
@@ -799,7 +798,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1927,9 +1926,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Faite attention \xE0 la jauge d'\xE9quilibre au dessus du personnage.
-    Il faut bouger le t\xE9l\xE9phone afin de garder l'\xE9quilibre, Si vous ne gardez
-    pas l'\xE9quilibre, c'est la noyade ! "
+  m_text: 'Pay attention to the balance gauge above the character. You have to move
+    the phone in order to keep your balance. If you don''t keep your balance, you''ll
+    drown! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 01efb0fd808ba86438ae61ec51290978, type: 2}
   m_sharedMaterial: {fileID: 4195976732622422233, guid: 01efb0fd808ba86438ae61ec51290978,
@@ -1957,7 +1956,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.15
+  m_fontSize: 44.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
