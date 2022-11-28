@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9017807484235285630}
   - component: {fileID: 9017807484235285631}
   - component: {fileID: 9017807484235285600}
-  - component: {fileID: 2270826184641317935}
-  - component: {fileID: -4861368959528418664}
+  - component: {fileID: 7871284865895619649}
+  - component: {fileID: 7863567074640623748}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -98,9 +98,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.76804096, y: 2.3668475, z: 0.72013515}
-  m_Center: {x: 0.050859686, y: 0.52474636, z: -0.0554385}
---- !u!114 &2270826184641317935
+  m_Size: {x: 0.76804096, y: 1.7193105, z: 0.72013515}
+  m_Center: {x: 0.050859686, y: 0.20097786, z: -0.0554385}
+--- !u!114 &7871284865895619649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b2799087e1313e042a64ec298579f09b, type: 3}
   - {fileID: 8300000, guid: 026f62f6e0856de48b088dd85238a8a9, type: 3}
   - {fileID: 8300000, guid: 67e5a42c5444864459c2cc265845f5df, type: 3}
---- !u!82 &-4861368959528418664
+--- !u!82 &7863567074640623748
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,7 +268,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4acb1301f1760f246aee11f3a5b9ebc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36700016
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4acb1301f1760f246aee11f3a5b9ebc2,
         type: 3}

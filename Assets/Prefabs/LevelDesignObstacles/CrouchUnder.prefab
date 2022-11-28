@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7314656060880136406}
   - component: {fileID: 7314656060880136407}
   - component: {fileID: 7314656060880136404}
-  - component: {fileID: 8110386340226053021}
-  - component: {fileID: 218723368218376054}
+  - component: {fileID: -980263550154504923}
+  - component: {fileID: -7085186149125379395}
   m_Layer: 0
   m_Name: CrouchUnder
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7314656060880136426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.7, y: 12.68, z: 400.58}
-  m_LocalScale: {x: 3.74, y: 1.5255274, z: 3.74}
+  m_LocalScale: {x: 3.74, y: 1.17, z: 3.74}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7063994507090964239}
@@ -98,9 +98,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.6485466, z: 0.21984069}
-  m_Center: {x: -0.0084721465, y: 2.0459158, z: -0.009995683}
---- !u!114 &8110386340226053021
+  m_Size: {x: 0.95, y: 0.7033123, z: 0.21984062}
+  m_Center: {x: 0, y: 1.6448708, z: -0.009995683}
+--- !u!114 &-980263550154504923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b2799087e1313e042a64ec298579f09b, type: 3}
   - {fileID: 8300000, guid: 026f62f6e0856de48b088dd85238a8a9, type: 3}
   - {fileID: 8300000, guid: 67e5a42c5444864459c2cc265845f5df, type: 3}
---- !u!82 &218723368218376054
+--- !u!82 &-7085186149125379395
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,7 +248,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 329c3a7ddc99f90449d996ddb8f286cb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.31
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 329c3a7ddc99f90449d996ddb8f286cb,
         type: 3}
@@ -268,7 +268,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 329c3a7ddc99f90449d996ddb8f286cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.22134225
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 329c3a7ddc99f90449d996ddb8f286cb,
         type: 3}
