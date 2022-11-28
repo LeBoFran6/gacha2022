@@ -3076,6 +3076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5495728627611822812}
   - component: {fileID: 5495728627611822787}
+  - component: {fileID: 1049933299}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3121,6 +3122,41 @@ MonoBehaviour:
   gameoverScreen: {fileID: 5495728627762057673}
   pauseMenu: {fileID: 5495728627171350930}
   herbe: 0
+--- !u!114 &1049933299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5495728627611822786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4749c665a7d24121b4945ac01946758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileRef: {fileID: 4900000, guid: f522e3b83bdde40e6a561c25cc1b5f26, type: 3}
+  rootObstacles: {fileID: 0}
+  rootCollectibles: {fileID: 0}
+  propsFrontObstacles:
+  - {fileID: 5990736286971060335, guid: 97144295d3c3d16428732be2ba638129, type: 3}
+  - {fileID: 9017807484235285602, guid: 38892f640327f2f42909dfecaaeaf6d0, type: 3}
+  - {fileID: 4748727312446359939, guid: 93706029d6a031242bb1c1ce31c74d2e, type: 3}
+  - {fileID: 1207259730332063429, guid: 2a259729f39b26244ab2c4d55c9ec029, type: 3}
+  - {fileID: 5970929187224508001, guid: 3459aec15c5b9094daa4d3c23f44a353, type: 3}
+  - {fileID: 3588780053512006037, guid: 4102b928682f54944830af67bc4857de, type: 3}
+  - {fileID: 2064103741530518901, guid: b41ee99dca4a8974a9fb609add58b15d, type: 3}
+  - {fileID: 6725963639637791182, guid: a8c7248076eafcb4b8883b8c40bac159, type: 3}
+  - {fileID: 764827585163763638, guid: 3fc321e7c5499694583491467cef94fc, type: 3}
+  propsJumpObstacles:
+  - {fileID: 7659435642943598337, guid: 4f6642afee730414280934142d26dd36, type: 3}
+  propsCrouchObstacles:
+  - {fileID: 7314656060880136426, guid: 265f79c88d222ae4a92ff123d4bc2f39, type: 3}
+  propHerb: {fileID: 3471723984600440522, guid: 9a787df0b15164a3295059517ec2c4ba,
+    type: 3}
+  leftSpawnerPos: {x: -3, y: 3.8, z: 30}
+  midSpawnerPos: {x: 0, y: 3.8, z: 30}
+  rightSpawnerPos: {x: 3, y: 3.8, z: 30}
+  deltaPos: 10
 --- !u!1 &5495728627622858689
 GameObject:
   m_ObjectHideFlags: 0
