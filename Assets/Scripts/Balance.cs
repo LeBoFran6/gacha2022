@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Balance : MonoBehaviour
 {
-    //animations
+    public GameObject JeanPoilIdle;
     public GameObject JeanPoilIsFalling;
 
 
@@ -62,7 +62,7 @@ public class Balance : MonoBehaviour
 
         float v = zRot > 180 ? zRot - 360f : zRot;
 
-        Debug.LogError(turbulanceTarget);
+        //Debug.LogError(turbulanceTarget);
         //Debug.LogError(currentTreshold + turbulance - warrningTreshold);
         //Debug.LogError(-currentTreshold + turbulance + warrningTreshold);
 
@@ -72,18 +72,23 @@ public class Balance : MonoBehaviour
         {
             gyroIndicator.ShowDangerRight(false);
             gyroIndicator.ShowDangerLeft(true);
-            //JeanPoilIsFalling.SetActive(true);
+            JeanPoilIsFalling.SetActive(true);
+            JeanPoilIdle.SetActive(false);
         }
         else if (v < 0 && v < -currentTreshold + turbulance + warningThreshold)
         {
             gyroIndicator.ShowDangerLeft(false);
             gyroIndicator.ShowDangerRight(true);
-            //JeanPoilIsFalling.SetActive(true);
+            JeanPoilIsFalling.SetActive(true);
+            JeanPoilIdle.SetActive(false);
+
         }
         else
         {
             gyroIndicator.ShowDangerLeft(false);
             gyroIndicator.ShowDangerRight(false);
+            JeanPoilIsFalling.SetActive(false);
+            JeanPoilIdle.SetActive(true);
         }
 
         if (!gameStarting)
