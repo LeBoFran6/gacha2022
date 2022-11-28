@@ -97,12 +97,16 @@ public class GameManager : MonoBehaviour
     {
         LevelData data = AppController.Instance.currentLevel;
         gameoverScreen.ShowWinScreen(0, 0, 0);
+        finishedGame = true;
     }
 
     public void deathEvent()
     {
-        isAlive = false;
-        gameoverScreen.ShowLoseScreen();
+        if (!GameManager.Instance.finishedGame)
+        { 
+            isAlive = false;
+            gameoverScreen.ShowLoseScreen();
+        }
     }
 
     IEnumerator QuickChromaEffect()

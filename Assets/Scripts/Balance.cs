@@ -68,7 +68,6 @@ public class Balance : MonoBehaviour
 
         float warningThreshold = currentTreshold * percentageWarning;
 
-        if (!GameManager.Instance.finishedGame)
         {
             if (v > 0 && v > currentTreshold + turbulance - warningThreshold)
             {

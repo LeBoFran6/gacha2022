@@ -387,15 +387,15 @@ MonoBehaviour:
   resetDB: 0
   fadein: {fileID: 1877177753}
   levels:
-  - levelName: Core Game
-    nextLevel: Level2
+  - levelName: level1
+    nextLevel: level2
     diffiuclty: 0
     unlocked: 0
     success: 0
     stars: 0
     unlockedDefault: 1
-  - levelName: Level2
-    nextLevel: 
+  - levelName: level2
+    nextLevel: level3
     diffiuclty: 0
     unlocked: 0
     success: 0

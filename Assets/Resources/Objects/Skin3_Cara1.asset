@@ -15,8 +15,9 @@ MonoBehaviour:
   type: 1
   itemName: Jean Poil le dingue
   description: 
-  icon: {fileID: 21300000, guid: fd098fb4cf57bad419701c802e442b7e, type: 3}
+  icon: {fileID: 21300000, guid: 4ee7953ae2e751b4fac501d6e92edb37, type: 3}
   prefab: {fileID: 1456306339861109848, guid: 72915e3a644a31840acf3b1b2e7e35f3, type: 3}
-  price: 50
-  unlocked: 1
-  equiped: 1
+  price: 100
+  unlocked: 0
+  equiped: 0
+  defaultUnlocked: 0

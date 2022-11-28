@@ -46,6 +46,7 @@ public class AppController : MonoBehaviour
 
     private IEnumerator Start()
     {
+        Money = 350;
         yield return new WaitForSeconds(5);
         fadein.SetActive(true);
         yield return new WaitForSeconds(1);

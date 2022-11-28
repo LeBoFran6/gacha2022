@@ -14,6 +14,11 @@ public class UI_Shop : MonoBehaviour
         SceneManager.UnloadSceneAsync("Shop");
     }
 
+    public void lOADpAGE(string s)
+    {
+        Application.OpenURL(s);
+    }
+
     private void OnEnable()
     {
         money.text = AppController.Instance.Money + "$";
