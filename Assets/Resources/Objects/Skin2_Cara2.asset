@@ -16,8 +16,8 @@ MonoBehaviour:
   itemName: Chat 2
   description: 
   icon: {fileID: 21300000, guid: 5a40cf0632fedce4080869eaa85f0065, type: 3}
-  prefab: {fileID: 1279652849611583441, guid: bcae2c798164fd04fa160c828a9485f1, type: 3}
+  prefab: {fileID: 2100000, guid: d76f0654832cc964bbb68f65a24dc590, type: 2}
   price: 50
-  unlocked: 0
-  equiped: 0
+  unlocked: 1
+  equiped: 1
   defaultUnlocked: 0

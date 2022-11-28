@@ -16,8 +16,8 @@ MonoBehaviour:
   itemName: Jean Poil le sobre
   description: 
   icon: {fileID: 21300000, guid: 003f2cb51d9d29d49b914abe34460499, type: 3}
-  prefab: {fileID: 3599322519025823509, guid: 316ce87f4c822ca41a1719457beeee67, type: 3}
+  prefab: {fileID: 2100000, guid: 3f9933eadbab4734ab3ed5f27ba353db, type: 2}
   price: 10
-  unlocked: 0
+  unlocked: 1
   equiped: 0
   defaultUnlocked: 0

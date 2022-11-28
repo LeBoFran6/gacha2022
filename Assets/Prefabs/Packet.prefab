@@ -296,7 +296,7 @@ MonoBehaviour:
   currentTreshold: 35
   zRot: 0
   gyroIndicator: {fileID: 5495728628622823872}
-  varianceRange: {x: 5, y: 5}
+  varianceRange: {x: 12, y: 15}
   maxTurbulance: 20
   percentageWarning: 0.717
   turbulanceTargetLerpSpeed: 0.005
@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JPdeath: {fileID: 2048725340}
+  Pousse: {fileID: 0}
 --- !u!1 &1439140012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,7 +3399,7 @@ MonoBehaviour:
   gameoverScreen: {fileID: 5495728627762057673}
   pauseMenu: {fileID: 5495728627171350930}
   iframeBegining: 3
-  timeBetweenWaves: 2
+  timeBetweenWaves: 3
   herbe: 0
   finishedGame: 0
 --- !u!114 &1049933299

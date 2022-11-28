@@ -12,6 +12,13 @@ public class ObstacleObject : MonoBehaviour
     public AudioClip[] tuyau;
     public AudioClip[] voiture;
     private AudioSource audioSource;
+    public AudioSource audioSourceDoppler;
+
+    public void PlaySoundOn(int i)
+    {
+        audioSource.panStereo = i;
+        audioSource.Play();
+    }
 
     private void Start()
     {
