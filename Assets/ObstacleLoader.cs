@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEditor;
+using Unity.VisualScripting;
 
 public class ObstacleLoader : MonoBehaviour
 {
@@ -29,27 +29,17 @@ public class ObstacleLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string filePath = AssetDatabase.GetAssetPath(fileRef);
+        TextAsset t = Resources.Load<TextAsset>("Level Design/" + fileRef.name);
+        dataArray = t.bytes;
 
-        if (!File.Exists(filePath))
-        {
-            Debug.Log("ERROR : Cannot load level obstacles !");
-        }
 
-        using(FileStream fileStream = new FileStream(filePath, FileMode.Open))
-        {
-            fileStream.Seek(0, SeekOrigin.Begin);
-            long fileBytes = fileStream.Seek(0,SeekOrigin.End);
-            fileStream.Seek(0, SeekOrigin.Begin);
-            //Debug.Log("Bytes : " + fileBytes);
+            int inter = 6;
 
-            for (int i = 0; i < fileBytes; i++)
-            {
-                dataArray[i] = (byte)fileStream.ReadByte();
-                //Debug.Log("" + dataArray[i]);
-            }
+#if UNITY_EDITOR_WIN
+            inter = 7;
+#endif
 
-            for(int i = 0; i < fileBytes; i += 6)
+            for (int i = 0; i < dataArray.Length; i += inter)
             {
                 int randPropId;
 
@@ -100,6 +90,5 @@ public class ObstacleLoader : MonoBehaviour
 
                 currentGap += deltaPos;
             }
-        }
     }
 }
