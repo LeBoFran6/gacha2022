@@ -7,6 +7,8 @@ public class GameOver : MonoBehaviour
 {
     public GameObject JPdeath;
 
+    public GameObject Pousse;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +21,7 @@ public class GameOver : MonoBehaviour
         {
             GameManager.Instance.deathEvent();
             JPdeath.SetActive(true);
+            Pousse.SetActive(false);
         }
     }
 }
