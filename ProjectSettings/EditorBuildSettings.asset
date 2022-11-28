@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/game 1.unity
     guid: c8ebc9f851de65f4287f9c8334c0ffa7
+  - enabled: 1
+    path: Assets/Scenes/gamefran6.unity
+    guid: a5983c75405bfd64d8496879c5692fcc
   - enabled: 0
     path: Assets/Scenes/gameSpawn.unity
     guid: 1f05c5d49193b4c8fbf26314f9d7007b
