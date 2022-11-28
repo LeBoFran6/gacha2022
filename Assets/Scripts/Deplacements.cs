@@ -118,7 +118,7 @@ public class Deplacements : MonoBehaviour
             }
         }
 
-        if(isJumping == false)
+        if(isJumping == false && isSliding == false)
         {
 
             if (positionPlayer != 0)
