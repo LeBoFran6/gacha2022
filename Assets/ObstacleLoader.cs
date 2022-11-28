@@ -29,6 +29,8 @@ public class ObstacleLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //TextAsset Resources.Load<TextAsset>(fileRef.name+".txt");
+
         string filePath = AssetDatabase.GetAssetPath(fileRef);
 
         if (!File.Exists(filePath))
@@ -49,7 +51,13 @@ public class ObstacleLoader : MonoBehaviour
                 //Debug.Log("" + dataArray[i]);
             }
 
-            for(int i = 0; i < fileBytes; i += 6)
+            int inter = 6;
+
+#if UNITY_EDITOR_WIN
+            inter = 7;
+#endif
+
+            for (int i = 0; i < fileBytes; i += inter)
             {
                 int randPropId;
 
