@@ -1553,9 +1553,11 @@ MonoBehaviour:
   money: {fileID: 1927026928}
   shopItems:
   - {fileID: 1232772432}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 255440216}
+  - {fileID: 1404002749}
+  - {fileID: 1127964342}
+  - {fileID: 1467789504}
+  - {fileID: 581645753}
 --- !u!1 &622354195
 GameObject:
   m_ObjectHideFlags: 0
