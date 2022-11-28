@@ -156,7 +156,7 @@ MonoBehaviour:
   sceneToLoad: MainMenu
   resetDB: 0
   levels:
-  - levelName: Core Game
+  - levelName: game
     nextLevel: Level2
     diffiuclty: 0
     unlocked: 0
