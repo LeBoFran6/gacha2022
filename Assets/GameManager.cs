@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator QuickChromaEffect()
     {
-            yield return null;
+        yield return null;
         //      PostProcessVolume m_Volume;
         //      Vignette m_Vignette
         // void Start()

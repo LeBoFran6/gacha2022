@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Deplacements : MonoBehaviour
 {
-    public Rigidbody rb;
-    public bool G = false;
-    public bool D = false;
+    public Transform[] positions;
+
     public int positionPlayer = 1;
 
     private Vector2 startTouchPosition;
@@ -16,7 +15,8 @@ public class Deplacements : MonoBehaviour
     [SerializeField] private Vector3 endpos;
     [SerializeField] private AnimationCurve curve;
     [SerializeField] private AnimationCurve curveSlide;
-    [SerializeField] private float percentage;
+    [SerializeField] private float percentage1;
+    [SerializeField] private float percentage2;
     private float dir = 1;
 
     private bool isJumping = false;
@@ -32,16 +32,22 @@ public class Deplacements : MonoBehaviour
 
     public void Gauche()
     {
-        G = true;
+        if (!isSliding && !isJumping && positionPlayer >= 1)
+        {
+            positionPlayer--;
+        }
     }
     public void Droite()
     {
-        D = true;
+        if (!isSliding && !isJumping && positionPlayer <= 1)
+        {
+            positionPlayer++;
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && isSliding == false)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && isSliding == false && isJumping == false)
         {
             isSliding = true;
             currentPitch = 0;
@@ -50,7 +56,7 @@ public class Deplacements : MonoBehaviour
             endpos = transform.position + new Vector3(0, -0.5f, 0);
         }
 
-        if (Input.GetKeyDown("space") && isJumping == false)
+        if (Input.GetKeyDown("space") && isJumping == false && isSliding == false)
         {
             isJumping = true;
 
@@ -68,7 +74,7 @@ public class Deplacements : MonoBehaviour
             endTouchPosition = Input.GetTouch(0).position;
 
             // Swipe vers le bas
-            if (endTouchPosition.y < startTouchPosition.y)
+            if (endTouchPosition.y < startTouchPosition.y && isSliding == false && isJumping == false)
             {
                 isSliding = true;
                 currentPitch = 0;
@@ -79,7 +85,7 @@ public class Deplacements : MonoBehaviour
             }
 
             // Swipe vers le haut
-            if (endTouchPosition.y > startTouchPosition.y && isJumping == false)
+            if (endTouchPosition.y > startTouchPosition.y && isJumping == false && isSliding == false)
             {
                 isJumping = true;
 
@@ -89,60 +95,35 @@ public class Deplacements : MonoBehaviour
             }
         }
 
-        if (isSliding)
+        if (isSliding && !isJumping)
         {
-            currentPitch = Mathf.LerpUnclamped(0, targetPitch, curveSlide.Evaluate(percentage));
+            currentPitch = Mathf.LerpUnclamped(0, targetPitch, curveSlide.Evaluate(percentage1));
             gyroScript.pitch = currentPitch;
-            transform.position = Vector3.LerpUnclamped(startpos, endpos, curve.Evaluate(percentage));
-            percentage += Time.deltaTime;
+            transform.position = Vector3.LerpUnclamped(startpos, endpos, curve.Evaluate(percentage1));
+            percentage1 += Time.deltaTime;
 
-            if (percentage > 1)
+            if (percentage1 > 1)
             {
                 isSliding = false;
-                percentage = 0;
+                percentage1 = 0;
             }
         }
 
-        if (isJumping)
+        if (isJumping && !isSliding)
         {
-            transform.position = Vector3.Lerp(startpos, endpos, curve.Evaluate(percentage));
+            transform.position = Vector3.Lerp(startpos, endpos, curve.Evaluate(percentage2));
 
-            percentage += Time.deltaTime * dir;
+            percentage2 += Time.deltaTime * dir;
 
-            if (Time.deltaTime * dir > 1.0f || percentage < 0) { dir = -dir; }
+            if (Time.deltaTime * dir > 1.0f || percentage2 < 0) { dir = -dir; }
 
-            if (percentage > 1)
+            if (percentage2 > 1)
             {
                 isJumping = false;
-                percentage = 0;
+                percentage2 = 0;
             }
         }
 
-        if(isJumping == false && isSliding == false)
-        {
-
-            if (positionPlayer != 0)
-            {
-                if (G)
-                {
-                    rb.velocity = new Vector3(-35, 0, 0);
-                    positionPlayer--;
-                    G = false;
-                }
-            }
-
-            if (positionPlayer != 2)
-            {
-                if (D)
-                {
-                    rb.velocity = new Vector3(35, 0, 0);
-                    positionPlayer++;
-                    D = false;
-                }
-            }
-            D = false;
-            G = false;
-
-        }
+        transform.position = new Vector3(Mathf.Lerp(transform.position.x, positions[positionPlayer].position.x, 0.1f),transform.position.y,transform.position.z);
     }
 }

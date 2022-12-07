@@ -37524,14 +37524,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 666836066, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
-      propertyPath: Pousse
-      value: 
-      objectReference: {fileID: 728858477}
-    - target: {fileID: 1049933299, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
-      propertyPath: fileRef
-      value: 
-      objectReference: {fileID: 4900000, guid: 1095db79b1b059f47af3f91964684daf, type: 3}
     - target: {fileID: 1049933299, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
       propertyPath: rootObstacles
       value: 
@@ -37540,11 +37532,6 @@ PrefabInstance:
       propertyPath: rootCollectibles
       value: 
       objectReference: {fileID: 1066772125}
-    - target: {fileID: 5495728628386705707, guid: 2e547745ffe7d854c9f67d83a2d453a5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1634.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5495728628625466925, guid: 2e547745ffe7d854c9f67d83a2d453a5,
         type: 3}
       propertyPath: m_Name
@@ -37607,12 +37594,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e547745ffe7d854c9f67d83a2d453a5, type: 3}
---- !u!1 &728858477 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132148534472985, guid: 2e547745ffe7d854c9f67d83a2d453a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 728858476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &729468073
 GameObject:
   m_ObjectHideFlags: 0
