@@ -3,6 +3,8 @@ Catsh' Nip
 
 ![My Image](E2pFrS.png)
 
+Play the game : https://nolwenna.itch.io/catch-nip
+
 Theme : AI
 
 Mobile Runner - 1 player
