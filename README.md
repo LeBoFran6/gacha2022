@@ -1,6 +1,8 @@
 # gacha2022
 Catsh' Nip
 
+![My Image](E2pFrS.png)
+
 Theme : AI
 
 Mobile Runner - 1 player
